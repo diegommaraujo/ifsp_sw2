@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+                
+            <div class="nav-link" style="float:left; witdh: 40%;">
+                <strong>WEB</strong>
+                <ul>@Html.ActionLink("Início", "Index", "Home", new { area = "" }, null)</ul>
+                <ul>@Html.ActionLink("Clientes", "Index", "Cliente", new { area = "" }, null)</ul>
+                <ul>@Html.ActionLink("Consultores", "Index", "Consultor", new { area = "" }, null)</ul>
+                <ul>@Html.ActionLink("Telefones", "Index", "Telefone", new { area = "" }, null)</ul>
+
+            </div>
+
+            <div class="nav-link" style="float:right; witdh: 40%;">
+                <strong>API</strong>
+                <ul><a href="/api/Clientes">Clientes</a></ul>
+                <ul><a href="/api/Consultors">Consultores</a></ul>
+                <ul><a href="/api/Clientes/1">Clientes/1</a></ul>
+                <ul><a href="/api/Consultors/2">Consultores/2</a></ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Sistemas Web II - TP 2 - Prof. Elienai</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
